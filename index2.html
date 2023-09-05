@@ -24,7 +24,7 @@
             </header>
             <div class="content">
                 <h2>Sobre Mi</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque cumque ipsam reprehenderit dignissimos, eos totam ipsa. Dolore doloremque tempore commodi expedita reprehenderit ex corrupti, animi dolorum earum repellendus.</p>
+                <p>👋 ¡Hola! Soy Caro, estudiante en la Diplomatura de Ciberseguridad en la Universidad de Palermo, QA Manual certificada por la Universidad Tecnológica Nacional y Tester Automation por el programa Codo a Codo.</p>
                 <!--<a href="#">Ver Video</a>-->
                 <div class="btn">
                     <a href="#">Ver Más</a>
@@ -37,10 +37,28 @@
             <ul class="sci">
                 <li><a href="https://linkedin.com/in/carola-donadío" target="_blank"><i class='bx bxl-linkedin-square' ></i></a></li>
                 <li><a href="https://github.com/CarolaDonadio" target="_blank"><i class='bx bxl-github' ></i></a></li>
-                <li><a href="#"><i class='bx bxl-discord-alt'></i></a></li>
+                <li id="button_discord"><a id="active-discord" onclick="mostrar()"><p id="parrafo-flecha-icon">caroladonadio23258</p><i class='bx bxl-discord-alt'></i></a></li>
             </ul>
             <p class="copyrightText">Copyright © 2023 Carola Donadío. All rights Reserved.</p>
         </div>
     </section>
+    
+    <script>
+        let button_discord = document.getElementById('button_discord');
+        button_discord.addEventListener('load', init, false);
+        function mostrar() {
+            
+            let active_user_discord = document.getElementById('parrafo-flecha-icon');
+            active_user_discord.style.visibility = 'hidden';
+            let btnDiscord = document.getElementById('active-discord');
+            btnDiscord.addEventListener('click', function (e) {
+                if(active_user_discord.style.visibility === 'hidden'){
+                    active_user_discord.style.visibility = 'visible';
+                }else{
+                    active_user_discord.style.visibility = 'hidden';
+                }
+            }, false);
+        }
+    </script>
 </body>
 </html>

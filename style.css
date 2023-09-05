@@ -146,6 +146,8 @@ header ul li a:hover, header ul li a.active {
     transform: translate(-50%, -50%) scale(0);
     width: 100%;
     height: 100%;
+    /*height: max-content;
+    width: max-content;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,14 +163,14 @@ header ul li a:hover, header ul li a.active {
 .clip video {
     max-width: 300px;
     outline: none;
-    border: 10px solid #db7192;
+    border: 10px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
 .clip .close {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: -30px;
+    right: 220px;
     cursor: pointer;
     font-weight: 500;
     letter-spacing: 2px;
@@ -177,9 +179,35 @@ header ul li a:hover, header ul li a.active {
 }
 
 /*===============RESPONSIVE===================*/
-@media (max-width: 991px) {
+@media (min-width: 801px) and (max-width: 991px) {
     .clip video {
-        max-width: 30%;
+        max-width: 50%;
+    }
+    .clip {
+        height: max-content;
+    }
+    .clip .close {
+        position: fixed;
+        right: 150px;
+        top: -30px;
+    }
+}
+
+@media (min-width: 651px) and (max-width: 800px) {
+    .clip video {
+        max-width: 70%;
+    }
+    .clip {
+        height: max-content;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 650px) {
+    .clip video {
+        max-width: 100%; /*300px*/
+    }
+    .clip {
+        height: max-content;
     }
 }
 
@@ -223,6 +251,7 @@ header ul li a:hover, header ul li a.active {
     border-radius: 50%;
     margin: 5px 0;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .sci li a i {
@@ -243,23 +272,70 @@ header ul li a:hover, header ul li a.active {
     color: #670B27; /*#2A0033*/
 }
 
+#parrafo-flecha-icon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 20px;
+    background-color: #9C8CBF;
+    color:#fff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 30px;
+    margin-right: 300px;
+    border-radius: 10px;
+    visibility: hidden;
+}
+#parrafo-flecha-icon::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #9C8CBF;
+    transform: rotate(45deg);
+    /*top: 140px;*/
+    right: -10px;
+}
+
+
 /*========================= RESPONSIVE ==========================*/
+@media (min-width: 1201px) and (max-width: 1260px) {
+    .container {
+        position: relative;
+        width: calc(100% - 20px);
+        padding: 50px;
+    }
+}
+
 @media (max-width: 1200px) {
     .container {
         position: relative;
         width: calc(100% - 20px);
         padding: 50px;
     }
+}
 
+@media (min-width: 1085px) and (max-width: 1400px) {
     .clip .close {
-        position: fixed;
-        top: -40px;
-        right: 60px;
+        right: -20px;
+    }
+    .clip {
+        height: max-content;
+        width: max-content;
     }
 }
+
 @media (min-width: 1030px) and (max-width: 1084px) {
     .content {
         padding: 20px;
+    }
+    .clip .close {
+        right: -20px;
+    }
+    .clip {
+        height: max-content;
     }
 }
 
@@ -268,8 +344,10 @@ header ul li a:hover, header ul li a.active {
         padding: 20px;
     }
     .clip .close {
-        top: -60px;
         right: -50px;
+    }
+    .clip {
+        height: max-content;
     }
     
 }
@@ -345,5 +423,17 @@ header ul li a:hover, header ul li a.active {
     }
     .imgBx img {
         max-width: 300px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 992px) {
+    #parrafo-flecha-icon {
+        margin-right: 0;
+        margin-bottom: 150px;
+    }
+
+    #parrafo-flecha-icon::before {
+        right: auto;
+        top: 50px;
     }
 }

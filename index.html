@@ -25,14 +25,14 @@
             <div class="content">
                 <h2>¡Buenas, buenas!</h2>
                 <p>Este es mi primer proyecto del curso FullStack Java impartido por el programa Codo a Codo 4.0.
-                    <br><br>Cuando quieras contactame por cualquiera de mis redes sociales.
+                    <br>Podés contactame por mis redes sociales.
                 </p>
                 <!--<a href="#">Ver Video</a>-->
                 <div class="btn">
                     <a href="#" class="play">Ver Video</a>
                 </div>
                 <div class="clip">
-                    <video src="Pancakes.mp4" controls></video>
+                    <video src="video.mp4" controls></video>
                     <b class="close">Cerrar</b>
                 </div>
 
@@ -43,7 +43,7 @@
             <ul class="sci">
                 <li><a href="https://linkedin.com/in/carola-donadío" target="_blank"><i class='bx bxl-linkedin-square' ></i></a></li>
                 <li><a href="https://github.com/CarolaDonadio" target="_blank"><i class='bx bxl-github' ></i></a></li>
-                <li><a href="#"><i class='bx bxl-discord-alt'></i></a></li>
+                <li id="button_discord"><a id="active-discord" onclick="mostrar()"><p id="parrafo-flecha-icon">caroladonadio23258</p><i class='bx bxl-discord-alt'></i></a></li>
             </ul>
             <p class="copyrightText">Copyright © 2023 Carola Donadío. All rights Reserved.</p>
         </div>
@@ -66,6 +66,22 @@
             btn.classList.remove('active');
             clip.classList.remove('active');
             video.pause()
+        }
+
+        let button_discord = document.getElementById('button_discord');
+
+        button_discord.addEventListener('load', init, false);
+        function mostrar() {
+            let active_user_discord = document.getElementById('parrafo-flecha-icon');
+            active_user_discord.style.visibility = 'hidden';
+            let btnDiscord = document.getElementById('active-discord');
+            btnDiscord.addEventListener('click', function (e) {
+                if(active_user_discord.style.visibility === 'hidden'){
+                    active_user_discord.style.visibility = 'visible';
+                }else{
+                    active_user_discord.style.visibility = 'hidden';
+                }
+            }, false);
         }
     </script>
 </body>
