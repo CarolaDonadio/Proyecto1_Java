@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    list-style:none;  
 }
 
 section {
@@ -87,6 +88,11 @@ header ul li a {
 header ul li a:hover, header ul li a.active {
     background: #9C8CBF; /*#FFF*/
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #2A0033;
+}
+ul li a {
+    text-decoration: none;
+    color: #734fc0;
 }
 
 .content {
@@ -103,6 +109,7 @@ header ul li a:hover, header ul li a.active {
 }
 
 .content h2 {
+    font-weight: 700;
     font-size: 3em;
     color: #2A0033;
 }
@@ -133,6 +140,59 @@ header ul li a:hover, header ul li a.active {
 
 .btn .play {
     transition: 0.5s;
+}
+
+#progress {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 6px;
+    background: #e56688;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 40px 0;
+}
+
+#progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #e56688;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    box-shadow: 0 5px 5px rgba(255, 26, 26, 0.22);
+}
+
+.controls {
+    display: inline-block;
+}
+
+.controls div {
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+    background: #db7192;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #670B27;
+    box-shadow: 0 10px 20px rgba(255, 26, 26, 0.22);
+    cursor: pointer;
+    
+}
+
+.controls div i {
+    transform: scale(1.5);
+}
+
+.titulo {
+    font-weight: 700;
+    font-size: 3em;
+    color: #2A0033;
+}
+.texto {
+    font-size: 1.1em;
+    color: #1F0225;
 }
 
 /*.btn.active .play {
@@ -176,6 +236,59 @@ header ul li a:hover, header ul li a.active {
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #fff;
+}
+
+.bg-card {
+    background-color: rgb(153,156,218,1)!important;
+}
+
+.btn-card {
+    background-color: #734fc0!important;
+    border: #734fc0!important;
+    color: #fff !important;
+
+}
+
+.btn-card:hover {
+    background-color: #5e409e!important;
+}
+
+/*====================== TABLA ====================0*/
+.container-table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+table {
+    color: #2A0033;
+    font-size: 14px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: solid 1px #bdbdbd;
+}
+
+thead {
+    background: rgb(231 231 231 / 54%);
+}
+
+th {
+    padding: 20px 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 15px;
+}
+
+tbody tr {
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background: rgb(255, 169, 194);
 }
 
 /*===============RESPONSIVE===================*/
@@ -299,6 +412,44 @@ header ul li a:hover, header ul li a.active {
     right: -10px;
 }
 
+/*==================== CONTACT FORM =======================*/
+.first_col {
+    background-color: white;
+    height: 490px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+    width: 550px;
+    left: 100px;
+    top: 80px;
+    border-radius: 20px;
+}
+
+.img-fluid {
+    border-radius: 20px;
+}
+
+.btn-primary {
+    background-color: #c1b688;
+    border: #c1b688;
+
+}
+
+.btn-primary:hover {
+    background-color: black !important;
+}
+
+.form-control {
+    height: 52px;
+    background: #fff;
+    font-size: 14px;
+    border-radius: 2px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #c1b688;
+}
+.form-control[type=text]:focus {
+border: 2px solid #555;
+}
 
 /*========================= RESPONSIVE ==========================*/
 @media (min-width: 1201px) and (max-width: 1260px) {
@@ -409,6 +560,29 @@ header ul li a:hover, header ul li a.active {
         color: #1b1823;
         text-align: center;
         margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .first_col {
+        position: initial;
+        left: 0 !important;
+    }
+
+    .sec_col {
+        order: 1 !important;
+    }
+
+    .row-last {
+        left: 0 !important;
+        height: 100px !important;
+        top: 0 !important;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 744px) {
+    .row {
+        width: 80%;
     }
 }
 
